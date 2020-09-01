@@ -16,11 +16,8 @@
 - [ ] Delete your bets
 
 ## i'll use: 
-- Express to create routes
-    -   expressjs.com # DOCS
+- [Express](expressjs.com) to create routes
 
-- ts-node-dev to compile and hotreload
-    - www.npmjs.com/package/ts-node-dev # DOCS
+- [ts-node-dev](www.npmjs.com/package/ts-node-dev) to compile and hotreload
 
-- TypeORM to connect with Database and make migrations
-    - typeorm.io # DOCS
+- [TypeORM](typeorm.io) to connect with Database and make migrations
