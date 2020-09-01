@@ -18,6 +18,6 @@
 ## i'll use: 
 - [Express](https://expressjs.com/) to create routes
 
-- [ts-node-dev](www.npmjs.com/package/ts-node-dev) to compile and hotreload
+- [ts-node-dev](https://www.npmjs.com/package/ts-node-dev) to compile and hotreload
 
-- [TypeORM](typeorm.io) to connect with Database and make migrations
+- [TypeORM](https://typeorm.io/#/) to connect with Database and make migrations
