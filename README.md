@@ -16,7 +16,7 @@
 - [ ] Delete your bets
 
 ## i'll use: 
-- [Express](expressjs.com) to create routes
+- [Express](https://expressjs.com/) to create routes
 
 - [ts-node-dev](www.npmjs.com/package/ts-node-dev) to compile and hotreload
 
