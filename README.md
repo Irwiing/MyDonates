@@ -1,7 +1,7 @@
 # My first CRUD using node with Typescript
 
 ## Propose:
-- Centralize yours bets history in a simple platform.
+- API Rest to make donations campaign.
 
 ## What it do?
 - [x] Nothing
@@ -9,11 +9,11 @@
 - [x] Nothing yet
 
 ## What it will do?
-- [ ] Enter with Username and First deposit
-- [ ] Insert your bets with Description bet odd and win or lose
-- [ ] Show your total balance and history of your bets
-- [ ] Update data of User or bet
-- [ ] Delete your bets
+- [x] Enter with Username, email and whatsapp
+- [ ] create your campaign with Title, Description and Target
+- [ ] List of capaign
+- [ ] make a donate for campaign
+- [ ] Delete your campaign
 
 ## i'll use: 
 - [Express](https://expressjs.com/) to create routes

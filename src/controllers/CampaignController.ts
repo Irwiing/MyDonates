@@ -1,21 +1,28 @@
 import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
 
+import { Campaign } from '../entity/Campaign';
 import { User } from '../entity/User';
 
 export default {
     async create(request: Request, response: Response){
-        const { username, whatsapp, email } = request.body;
+        const campaign = new Campaign();
+        const user = new User()
+        const { title, description, target } = request.body;
+        const id = request.headers.authorization;
+
         
+        campaign.title = title;
+        campaign.description = description;
+        campaign.target = target;
+        campaign.user =;
         try{
            const result = await getConnection()
                 .createQueryBuilder()
                 .insert()
-                .into(User)
+                .into(Campaign)
                 .values({ 
-                    username,   
-                    whatsapp,
-                    email                 
+                                   
                 })
                 .execute();
             return response.json(result.generatedMaps);

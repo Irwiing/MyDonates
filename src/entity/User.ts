@@ -1,4 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany} from "typeorm";
+import { Campaign } from './Campaign'
+import { Donate } from "./Donate";
+
 
 @Entity()
 export class User {
@@ -7,9 +10,17 @@ export class User {
     id!: number;
 
     @Column()
-    firstName!: string;
+    username!: string;
 
     @Column()
-    lastName!: string;
+    whatsapp!: string;
 
+    @Column()
+    email!: string;
+
+    @OneToMany(type => Campaign, campaign => campaign.user)
+    campaign!: Campaign[];
+
+    @OneToMany(type => Donate, donate => donate.user)
+    donate!: Donate[];
 }
