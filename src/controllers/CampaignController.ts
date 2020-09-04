@@ -2,30 +2,28 @@ import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
 
 import { Campaign } from '../entity/Campaign';
-import { User } from '../entity/User';
 
 export default {
-    async create(request: Request, response: Response){
-        const campaign = new Campaign();
-        const user = new User()
-        const { title, description, target } = request.body;
-        const id = request.headers.authorization;
+    async index(request: Request, response: Response){
 
+    },
+    async create(request: Request, response: Response){
         
-        campaign.title = title;
-        campaign.description = description;
-        campaign.target = target;
-        campaign.user =;
+        const { title, description, target, user } = request.body;
+
         try{
-           const result = await getConnection()
+            const { identifiers } = await getConnection()
                 .createQueryBuilder()
                 .insert()
                 .into(Campaign)
-                .values({ 
-                                   
+                .values({
+                    title, 
+                    description, 
+                    target, 
+                    user 
                 })
-                .execute();
-            return response.json(result.generatedMaps);
+                .execute();            
+            return response.status(200).json(identifiers);
         } catch(e){
             return response.json(e)
         }

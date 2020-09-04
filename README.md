@@ -10,9 +10,10 @@
 
 ## What it will do?
 - [x] Enter with Username, email and whatsapp
-- [ ] create your campaign with Title, Description and Target
+- [x] create your campaign with Title, Description and Target
 - [ ] List of capaign
 - [ ] make a donate for campaign
+- [ ] Update your campaign
 - [ ] Delete your campaign
 
 ## i'll use: 
@@ -20,4 +21,4 @@
 
 - [ts-node-dev](https://www.npmjs.com/package/ts-node-dev) to compile and hotreload
 
-- [TypeORM](https://typeorm.io/#/) to connect with Database and make migrations
+- [TypeORM](https://typeorm.io/#/) to connect with Database, make migrations and entities
