@@ -1,11 +1,18 @@
 import { Request, Response } from 'express'
-import { getConnection } from 'typeorm'
+import { getConnection, getRepository } from 'typeorm'
 
 import { Campaign } from '../entity/Campaign';
 
 export default {
     async index(request: Request, response: Response){
-
+        try {
+            const campaigns = await getRepository(Campaign)
+                .createQueryBuilder("campaign")
+                .getMany();
+            return response.json(campaigns)
+        } catch (e) {            
+            return response.json(e)
+        }
     },
     async create(request: Request, response: Response){
         

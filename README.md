@@ -4,15 +4,14 @@
 - API Rest to make donations campaign.
 
 ## What it do?
-- [x] Nothing
-- [x] Nothing Too
-- [x] Nothing yet
-
-## What it will do?
 - [x] Enter with Username, email and whatsapp
 - [x] create your campaign with Title, Description and Target
-- [ ] List of capaign
-- [ ] make a donate for campaign
+- [x] Make a donate for campaign
+- [x] List of capaign
+- [x] List of donate
+- [x] List of user
+
+## What it will do?
 - [ ] Update your campaign
 - [ ] Delete your campaign
 

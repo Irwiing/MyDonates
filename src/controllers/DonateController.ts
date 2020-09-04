@@ -1,11 +1,18 @@
 import { Request, Response } from 'express'
-import { getConnection } from 'typeorm'
+import { getConnection, getRepository } from 'typeorm'
 
 import { Donate } from '../entity/Donate'
 
 export default {
     async index(request: Request, response: Response){
-
+        try {
+            const donates = await getRepository(Donate)
+                .createQueryBuilder("donate")
+                .getMany();
+            return response.json(donates)
+        } catch (e) {            
+            return response.json(e)
+        }
     },
     async create(request: Request, response: Response){
         
