@@ -1,35 +1,34 @@
 import { Request, Response } from 'express'
-import { getConnection, getRepository } from 'typeorm'
+import { getConnection, getRepository, createQueryBuilder, getManager } from 'typeorm'
 
 import { Donate } from '../entity/Donate'
 
 export default {
     async index(request: Request, response: Response){
-        try {
-            const donates = await getRepository(Donate)
-                .createQueryBuilder("donate")
-                .getMany();
-            return response.json(donates)
+        const { id } = request.params;        
+        try {            
+            const donates = await getRepository(Donate).find({
+                join: {
+                    alias: "donate",
+                    leftJoinAndSelect: {
+                        user: "donate.user",
+                        campaign: "donate.campaign"
+                    }
+                },
+                where: { id }
+            });
+
+            return response.status(200).json(donates)
         } catch (e) {            
             return response.json(e)
         }
     },
     async create(request: Request, response: Response){
-        
-        const {  user, campaign, value } = request.body;
-
         try{
-            const { identifiers } = await getConnection()
-                .createQueryBuilder()
-                .insert()
-                .into(Donate)
-                .values({
-                    user, 
-                    campaign, 
-                    value                    
-                })
-                .execute();            
-            return response.status(200).json(identifiers);
+            const donate = await getRepository(Donate).create(request.body)
+            const result = await getRepository(Donate).save(donate)
+
+            return response.status(200).json(result);
         } catch(e){
             return response.json(e)
         }

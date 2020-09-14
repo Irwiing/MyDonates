@@ -11,7 +11,7 @@ routes.post('/login', UserController.create)
 routes.get('/campaign', CampaignController.index)
 routes.post('/campaign', CampaignController.create)
 
-routes.get('/donate', DonateController.index)
+routes.get('/donate/:id', DonateController.index)
 routes.post('/donate', DonateController.create)
 
 export default routes;

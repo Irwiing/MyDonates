@@ -1,4 +1,4 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany} from "typeorm";
+import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn} from "typeorm";
 import { User } from './User'
 import { Donate } from "./Donate";
 
@@ -19,6 +19,7 @@ export class Campaign {
     target!: number;
 
     @ManyToOne(type => User, user => user.campaign)
+    @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
     user!: User;
 
     @OneToMany(type => Donate, donate => donate.campaign)
