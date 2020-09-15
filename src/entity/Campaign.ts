@@ -15,11 +15,10 @@ export class Campaign {
     @Column({ nullable: false })
     description!: string;
 
-    @Column("decimal", { precision: 5, scale: 2, default:0, nullable: false })
+    @Column("decimal", { precision: 10, scale: 2,  nullable: false })
     target!: number;
 
     @ManyToOne(type => User, user => user.campaign)
-    @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
     user!: User;
 
     @OneToMany(type => Donate, donate => donate.campaign)

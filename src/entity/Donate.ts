@@ -15,6 +15,6 @@ export class Donate {
     @ManyToOne(type => Campaign, { nullable: false })
     campaign!: Campaign;
 
-    @Column("decimal", { precision: 5, scale: 2, default:0, nullable: false })
+    @Column("decimal", { precision: 10, scale: 2, nullable: false })
     value!: number;
 }
