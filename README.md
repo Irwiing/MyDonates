@@ -27,7 +27,7 @@
 ## endpoints:
 - /login
     - POST will create a user in database
-        - Exemplo of body request
+        - Example of body request
     ``` 
     {
         "username": "Jk Rowling",
@@ -36,6 +36,7 @@
     }
     ```
     - GET will return list of users
+        - Example of response
     ``` 
     {
         "id": 1,
