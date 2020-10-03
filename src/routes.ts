@@ -5,9 +5,9 @@ import DonateController from './controllers/DonateController';
 
 const routes = Router();
 
-routes.get('/login', UserController.index)
-routes.post('/login', UserController.create)
-routes.put('/login/:id',)
+routes.get('/user', UserController.index)
+routes.post('/user', UserController.create)
+
 
 routes.get('/campaign', CampaignController.index)
 routes.post('/campaign', CampaignController.create)
