@@ -4,5 +4,5 @@ module.exports = {
     "url": process.env.JAWSDB_MARIA_URL,
     "entities": [process.env.ENTITIES],
     "logging": true,
-    "synchronize": false
+    "synchronize": true
 }
