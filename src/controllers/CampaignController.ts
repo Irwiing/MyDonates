@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { getConnection, getRepository, getManager } from 'typeorm'
+import { getRepository } from 'typeorm'
 
 import { Campaign } from '../entity/Campaign';
 
